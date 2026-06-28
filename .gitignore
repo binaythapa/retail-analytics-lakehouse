@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env
+.vscode/
+.idea/
+*.log
+*.tmp
+dbt_packages/
+target/
+.DS_Store
