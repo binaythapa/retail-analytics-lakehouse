@@ -1,10 +1,92 @@
+# ----------------------------------------
+# Python
+# ----------------------------------------
 __pycache__/
-*.pyc
-.env
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# Python Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Python Logs
+*.log
+
+# Python Temp Files
+*.tmp
+*.temp
+
+# ----------------------------------------
+# IDE / Editor
+# ----------------------------------------
 .vscode/
 .idea/
-*.log
-*.tmp
+*.swp
+*.swo
+
+# ----------------------------------------
+# Databricks
+# ----------------------------------------
+.databricks/
+
+# ----------------------------------------
+# dbt
+# ----------------------------------------
 dbt_packages/
 target/
+logs/
+
+# ----------------------------------------
+# Jupyter Notebook
+# ----------------------------------------
+.ipynb_checkpoints/
+
+# ----------------------------------------
+# Power BI
+# ----------------------------------------
+*.pbix.autosave
+*.tmp.pbix
+
+# ----------------------------------------
+# Operating System Files
+# ----------------------------------------
 .DS_Store
+Thumbs.db
+desktop.ini
+
+# ----------------------------------------
+# Environment Variables / Secrets
+# ----------------------------------------
+.env
+.env.*
+*.env
+
+# ----------------------------------------
+# Terraform (if using Azure Infrastructure)
+# ----------------------------------------
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+
+# ----------------------------------------
+# Azure DevOps
+# ----------------------------------------
+.azure/
+
+# ----------------------------------------
+# Miscellaneous
+# ----------------------------------------
+.cache/
+coverage/
+htmlcov/
+.pytest_cache/
+.mypy_cache/
