@@ -1,0 +1,15 @@
+{
+	"name": "adf-retail-dev-gt",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b24fb454-1bbc-46fd-834a-86ad8bc718dc",
+		"tenantId": "cfaa928a-2f38-4b5c-a2cb-a22892f6189c"
+	}
+}
