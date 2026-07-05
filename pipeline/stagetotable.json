@@ -22,7 +22,7 @@
 					"scripts": [
 						{
 							"type": "Query",
-							"text": "COPY INTO CUSTOMERS\nFROM @RETAIL_STAGE/customers.csv.gz\nFILE_FORMAT = (FORMAT_NAME = 'CSV_FORMAT')\nON_ERROR = 'CONTINUE';"
+							"text": "USE DATABASE MYSTYLE;\nUSE SCHEMA PUBLIC;\n\nCOPY INTO CUSTOMERS\nFROM @RETAIL_STAGE/customers.csv.gz\nFILE_FORMAT = (FORMAT_NAME = 'CSV_FORMAT')\nON_ERROR = 'CONTINUE'"
 						}
 					],
 					"scriptBlockExecutionTimeout": "02:00:00",
