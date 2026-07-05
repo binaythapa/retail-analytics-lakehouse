@@ -21,29 +21,6 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/snconnection')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "SnowflakeV2",
-				"typeProperties": {
-					"authenticationType": "Basic",
-					"accountIdentifier": "pbxpsjy-uc38847",
-					"user": "tbinay",
-					"database": "[parameters('snconnection_properties_typeProperties_database')]",
-					"warehouse": "compute_wh",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('snconnection_password')]"
-					},
-					"useUtcTimestamps": false
-				},
-				"version": "1.1"
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/stagetotable')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -80,11 +57,35 @@
 				"policy": {
 					"elapsedTimeMetric": {}
 				},
-				"annotations": []
+				"annotations": [],
+				"lastPublishTime": "2026-07-05T10:59:57Z"
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/snconnection')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/snconnection')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SnowflakeV2",
+				"typeProperties": {
+					"authenticationType": "Basic",
+					"accountIdentifier": "pbxpsjy-uc38847",
+					"user": "tbinay",
+					"database": "[parameters('snconnection_properties_typeProperties_database')]",
+					"warehouse": "compute_wh",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('snconnection_password')]"
+					},
+					"useUtcTimestamps": false
+				},
+				"version": "1.1"
+			},
+			"dependsOn": []
 		}
 	]
 }
