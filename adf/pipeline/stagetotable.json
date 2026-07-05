@@ -1,0 +1,37 @@
+{
+	"name": "stagetotable",
+	"properties": {
+		"activities": [
+			{
+				"name": "stagetotable",
+				"type": "Script",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"linkedServiceName": {
+					"referenceName": "snconnection",
+					"type": "LinkedServiceReference"
+				},
+				"typeProperties": {
+					"scripts": [
+						{
+							"type": "Query",
+							"text": "USE DATABASE MYSTYLE;\nUSE SCHEMA PUBLIC;\n\nCOPY INTO CUSTOMERS\nFROM @RETAIL_STAGE/customers.csv.gz\nFILE_FORMAT = (FORMAT_NAME = 'CSV_FORMAT')\nON_ERROR = 'CONTINUE'"
+						}
+					],
+					"scriptBlockExecutionTimeout": "02:00:00",
+					"treatDecimalAsString": false
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2026-07-05T10:59:57Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
